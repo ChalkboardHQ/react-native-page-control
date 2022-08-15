@@ -3,7 +3,7 @@ var ReactNative = require('react-native');
 var PropTypes = require('prop-types');
 var createReactClass = require('create-react-class');
 
-var { StyleSheet, View, TouchableWithoutFeedback, ViewPropTypes } = ReactNative;
+var { StyleSheet, View, TouchableWithoutFeedback } = ReactNative;
 
 var PageControl = createReactClass({
     propTypes: {
@@ -13,8 +13,8 @@ var PageControl = createReactClass({
         pageIndicatorTintColor: PropTypes.string,
         currentPageIndicatorTintColor: PropTypes.string,
         indicatorSize: PropTypes.object,
-        indicatorStyle: ViewPropTypes.style,
-        currentIndicatorStyle: ViewPropTypes.style,
+        indicatorStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
+        currentIndicatorStyle:  PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
         onPageIndicatorPress: PropTypes.func
     },
 
